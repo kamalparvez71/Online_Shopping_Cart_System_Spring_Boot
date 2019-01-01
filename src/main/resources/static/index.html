@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+
+<html ng-app="myApp">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="image/images.png" rel="icon" type="text/css">
+        <title>Online ShoppingCart Using AngularJS,Spring,MySQL & REST</title>
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+        <meta charset = "UTF-8" name = "viewport" content = "width=device-width, initial-scale=1" /> 
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="bootstrap-theme.css" rel="stylesheet" type="text/css"/>
+        <link href="bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link rel = "stylesheet" type = "text/css" href = "css/style.css"/>
+        <script src="angular.js" type="text/javascript"></script>
+        <script src="bootstrap.min.js" type="text/javascript"></script>
+        <script src="list.js" type="text/javascript"></script>
+
+        <script src="jquery.min.js" type="text/javascript"></script>
+    </head>
+    <body ng-controller="restCtrl">
+
+
+
+        <nav  class="navbar navbar-fixed-top">
+            <div style="background-color:#000" class="container-fluid">
+                <div style="background-color: #000" class="navbar-header">
+
+                    <button  type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>                        
+                    </button>
+                    <ul style="color:black" class="nav nav-pills navbar-brand">
+                        <li class="disabled"><a href="index.html">Home</a></li>
+                        <li class="dropdown">
+                            <a href="Login.html">Product</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">***</a></li>
+                                <li><a href="#">***</a></li>
+                                <li><a href="#">***</a></li>
+                                <li><a href="#">***</a></li>
+                            </ul>
+                        </li>
+                        <!--
+                        
+                                                <li class="dropdown">
+                                                    <a class="dropdown-toggle" data-toggle="dropdown"  href="#">MOHEY<span class="caret"></span></a>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a href="#">COMPANY</a></li>
+                                                        <li><a href="#">STORE</a></li>
+                                                        <li><a href="#">GIFT CARD</a></li>
+                                                        <li class="divider"></li>
+                                                        <li><a href="#">Separated link</a></li>
+                        
+                                                        <li><a href="#">SQL</a></li>
+                                                        <li><a href="#">PHP</a></li>
+                                                        <li><a href="#">C#.Net</a></li>
+                                                    </ul>
+                                                </li>
+                        -->
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">STORE<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">GULSHAN-1</a></li>
+                                <li><a href="#">GULSHAN-2</a></li>
+                                <li><a href="#">DHANMONDI</a></li>
+                                <li><a href="#">UTTARA</a></li>
+                                <li><a href="#">BANANI</a></li>
+                                <li><a href="#">MALIBAG</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="aboutus.html">ABOUT US</a></li>
+                        <li style="padding: 250px">
+                        </li>
+                        <li>
+                            <input type="text" class="form-control" placeholder="Search" ng-model="code">
+                        </li>
+                        <li><button type="submit" class="btn btn-info">Submit</button></li>
+                    </ul>
+                </div>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-search"></span> Search</a></li>
+                    <li><a href="mycart.html"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-envelope"></span> Message</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-earphone"></span> +8801703777773</a></li>
+                    <li><a href="Sign Up.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="Login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-warning-sign"></span> Forgot Password?</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+
+
+    <div style="padding-top: 100px">
+
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+
+            <div style="background-color:rgb(204,204,204)" class="col-md-3">
+
+                <ul class="active"><h3><a href="index.html">Home</a></h3></ul>
+                <ul><h3><a href="product.html">Product</a></h3></ul>
+                <ul><h3><a href="aboutus.html">About Us</a></h3></ul>
+                <ul><h3><a href="#">Store</a></h3></ul>
+
+                <h3>Be a Proud Member</h3><h5>It's free and always will be.</h5>
+                <form>
+                    <table bgcolor="#FF66CC">
+                        <tr><td><input class="form-control" placeholder="Enter User Name" type="text"></td></tr>
+                        <tr><td><input class="form-control" placeholder="Enter Email Address" type="email"></td></tr>
+                        <tr><td><input class="form-control" placeholder="Enter Password" type="password"></td></tr>
+                        <tr><td><input class="form-control" placeholder="Retype Password"  type="password"></td></tr>
+                        <tr><td><input class="form-control" placeholder="Enter Mobile Number" type="text"></td></tr>
+                        <tr><td><input class="form-control" type="date"></td></tr>
+                        <td><h5><b>Gender :</b></h5>
+                            <b><input type="radio" name="g">Male
+                                <input type="radio" name="g">Female
+                            </b></td>
+                        <br/>
+                    </table>
+                    <p>By clicking Create Account, you agree to our <a href="#">Terms</a> and Conditions that you have read our <a href="#">Data Policy</a>, including our <a href="#">Cookie Use Policy</a>.</p>
+                    <input name="Submit" type="submit" class="btn btn-success" value="Submit" id="submit">
+                    <input name="reset" type="reset" class="btn btn-danger" value="Reset" id="reset">
+                    <input name="Forgot" type="submit" class="btn btn-warning" value="Forgot?" id="submit">
+                    <br/><br/>
+                    <p><a href="#">Create a Page</a> for a celebrity, band or business.</p>
+                </form>
+            </div>
+            <div class="col-md-9"  ng-repeat = "x in products|filter: pid" style="border: #1b6d85; border-color: #1b6d85; border-style: solid black">
+<!--
+                <div style="border: #1b6d85; border-color: #1b6d85; border-style: solid black">
+                    <img class="mySlides1" src="image/ecommerce.jpg" width="1050px" height="700px"/>
+                    <img class="mySlides1" src="image/Tune Box (Metal).jpg" width="1050px" height="700px"/>
+                    <img class="mySlides1" src="image/photo_frame.jpg" width="1050px" height="700px"/>
+                    <img class="mySlides1" src="image/aarong_belt_01 Aaromg.jpg" width="1050px" height="700px"/>                 
+                     <img class="mySlides1" src="image/aarong_belt_02 Aarong.jpg" width="1050px" height="700px"/>
+                    <img class="mySlides1" src="image/aarong_black_wallet black.jpg" width="1050px" height="700px"/>
+                    <img class="mySlides1" src="image/DunHill Perfume (Men).jpg" width="1050px" height="700px"/>
+                    <img class="mySlides1" src="image/Hugo boss 125ml (Men).jpg" width="1050px" height="700px"/>-->
+<div><img class="mySlides1"   src="{{x.pimage}}" style="padding-left: 50px; padding-top: 50px; padding-right:50px" width="900px" height="700px"/></div>
+               
+            </div>
+        </div>
+    </div>
+    <script>
+// Automatic Slideshow - change image every 3 seconds
+        var myIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > x.length) {
+                myIndex = 1
+            }
+            x[myIndex - 1].style.display = "block";
+            setTimeout(carousel, 2000);
+        }
+    </script>
+    <script>
+        var myIndex = 0;
+        carousel1();
+        function carousel1() {
+            var i;
+            var x = document.getElementsByClassName("mySlides1");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > x.length) {
+                myIndex = 1}
+            x[myIndex - 1].style.display = "block";
+            setTimeout(carousel1, 2500);
+        }
+    </script>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+
+                <div style="padding: 30px">
+
+                </div>
+                <div class = "panel panel-primary">
+                    <div class = "panel-heading">
+                        <h5>MY CART</h5>
+                    </div>
+                    <div class = "panel-body table-responsive">
+                        <table class = "table">
+                            <thead>
+                                <tr>
+                                    <th>Code</th>
+                                    <th>Name</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Image</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat = "cart in carts" ng-init = "setTotals(cart)">
+                                    <td>{{cart.pid}}</td>
+                                    <td>{{cart.pname}}</td>
+                                    <td>${{cart.pprice}}</td>
+                                    <td><input type="number" placeholder="{{qty}}"/></td>
+                                    <td><img class="thumbnail" src="{{cart.pimage}}" width="50px" height="50px"/></td>
+                                    <td><button type = "button"  ng-click = "add_cart(cart)" class = "btn btn-success"><span class = "glyphicon glyphicon-remove-sign"></span> Add</button></td>
+                                    <td><button type = "button"  ng-click = "remove_cart(cart)" class = "btn btn-danger"><span class = "glyphicon glyphicon-remove-sign"></span> Remove</button></td>
+                                </tr>
+                                <tr style=" font-weight: bold">
+
+                                    <td></td>
+                                    <td align = "center">Total</td>
+                                    <td align="center">${{total}}</td>
+                                    <td align = "center"><a href="submit.html"><button type="submit" class="btn btn-success" onclick="qty">Submit</button></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="container-fluid" style="background-color: menu">
+        <div class="row">
+
+            <div class="col-md-12">
+                <div id = "bg-background">
+                    <div><h2>PRODUCTS DISPLAY</h2> 
+                        <input type="text" width="200px" class="form-control" placeholder="Search" ng-model="pid">
+                    </div>
+                    <hr style = "border-top:1px groovy #ccc;"/>
+                    <div id = "x">
+                        <div id = "p_list" ng-repeat = "x in products|filter: pid" class="col-md-4">
+
+                            <h4 style=" color: royalblue"><b>Code :{{x.pid}}</b></h4>  
+                            <h4>Product Name :{{x.pname}}</h4>
+                            <h4 style=" color: limegreen">Available Quantity :{{x.pquantity}}</h4>
+                            <h4 style=" color: crimson">Price: ${{x.pprice}}</h4>
+                            <div>
+                                <center> <img class="thumbnail" src="{{x.pimage}}"  width="320px" height="250px"/></center>
+                            </div>            
+                            <center><button type = "button" class="btn bg-primary btn-group-sm" ng-click = "add_cart(x)"><span class = "glyphicon glyphicon-shopping-cart"></span> Add to cart</button></center>
+                            <br/><br/>
+                            <hr/><hr/>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div>
+        <hr/><hr/>
+
+    </div>
+    <footer class="footer1" style="background: thistle">
+        <div class="container-fluid">
+
+            <div class="row">
+
+                <div class="col-lg-3 col-md-3">
+                    <ul class="list-unstyled clear-margins">
+
+                        <li class="widget-container widget_nav_menu">
+
+                            <h3 class="title-widget">Useful links</h3>
+                            <ul>
+                                <li><a  href="#">About Us</a></li>
+                                <li><a  href="#">Contact Us</a></li>
+                                <li><a  href="#">Success Stories</a></li>
+                                <li><a  href="#">PG Courses</a></li>
+                                <li><a  href="#">Achiever's Batch</a></li>
+                                <li><a  href="#"> Regular Batch</a></li>
+                                <li><a  href="#">Test & Discussion</a></li>
+                                <li><a  href="#">  Fast Track T & D</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-3">
+                    <ul class="list-unstyled clear-margins">
+                        <li class="widget-container widget_nav_menu">
+                            <h3 class="title-widget">Useful links</h3>
+                            <ul>
+                                <li><a  href="#">Test Series Schedule</a></li>
+                                <li><a  href="#">Postal Coaching</a></li>
+                                <li><a  href="#">PG Dr. Bhatia Books</a></li>
+                                <li><a  href="#">UG Courses</a></li>
+                                <li><a  href="#">Satellite Education</a></li>
+                                <li><a  href="#">Study Centres</a></li>
+                                <li><a  href="#">State P.G. Mocks</a></li>
+                                <li><a  href="#" target="_blank"> Results</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-3">
+                    <ul class="list-unstyled clear-margins">
+                        <li class="widget-container widget_nav_menu">
+                            <h3 class="title-widget">Useful links</h3>
+                            <ul>
+                                <li><a href="#">Enquiry Form</a></li>
+                                <li><a href="#">Online Test Series</a></li>
+                                <li><a href="#">Grand Tests Series</a></li>
+                                <li><a href="#">Subject Wise Test Series</a></li>
+                                <li><a href="#">Smart Book</a></li>
+                                <li><a href="#">Test Centres</a></li>
+                                <li><a href="#">Admission Form</a></li>
+                                <li><a href="#">Computer Live Test</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-3">
+                    <ul class="list-unstyled clear-margins">
+                        <li class="widget-container widget_recent_news">
+                            <h1 class="title-widget">Contact Details</h1>
+
+                            <div class="footerp"> 
+                                <h3 class="title-median"> OnlineShopping Pvt.Ltd</h3>
+                                <p><b>Email id:</b> <a href="mailto:kamalparvez71@gmail.com">kamalparvez71@gmail.com</a></p><p><b>Helpline: 77777</b>
+                                    <b style="color: #000">(8AM to 10PM)</b>
+                                <p>Contact No : +8801703777773,  01911933313, +8801675691677</p></p>
+
+                                <p><b>Corp Office / Postal Address</b><br/>
+                                    H-43/11(1st Floor), R# Zigatola New Road, Zigatola,Dhanmondi R/A,Dhaka,Bangladesh.</p>
+                                <p><b>Phone Numbers : </b>+8801703777773, </p>
+                                <p> 01911933313,+8801675691677</p>
+                            </div>
+                            <div class="social-icons">
+                                <ul class="nomargin">
+                                    <a href="https://www.facebook.com/bootsnipp"></a>
+                                    <a href="https://twitter.com/bootsnipp"></a>
+                                    <a href="https://plus.google.com/+Bootsnipp-page"></a>
+                                    <a href="mailto:bootsnipp@gmail.com"></a>
+
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container-fluid">
+
+
+
+                <div class="col-md-12">
+                    <div  style=" text-align:  center" class="copyright">
+
+                        Copyright© 2017-2018, OnlineShopping Pvt.Ltd, All rights reserved
+
+                    </div>
+
+
+                    <div class="design" style=" text-align:  center">
+
+                        <a href="#">Franchisee </a> |  <a target="_blank" href="#">Web Design & Development by OnlineShopping Pvt.Ltd</a>
+                        <br/>
+                        <a href="#" class="back-to-top">Back to Top</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+
+</html>

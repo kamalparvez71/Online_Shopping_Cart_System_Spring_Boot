@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html ng-app="myApp">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Product Details Page</title>
+        <link href="image/images.png" rel="icon" type="text/css">
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <script src="js/jquery.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="js/angular.js" type="text/javascript"></script>
+        <script src="list.js" type="text/javascript"></script>
+                <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style type="text/css">
+                    .header, .footer-area{
+                border: 1px solid #DDD;
+                padding: 20px;
+                margin-top: 10px;
+                box-shadow: 0px 0px 10px #DDD;
+            }
+            .content-area, .menu{
+                margin-top: 10px;
+            }
+            .sidebar, .content{
+                border: 1px solid #DDD;
+                padding: 20px;
+                box-shadow: 0px 0px 10px #DDD;
+            }
+
+        </style>
+    </head>
+    <body ng-controller="restCtrl">
+
+<nav  class="navbar navbar-fixed-top">
+            <div style="background-color:#000" class="container-fluid">
+                <div style="background-color: #000" class="navbar-header">
+
+                    <button  type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>                        
+                    </button>
+                    <ul style="color:black" class="nav nav-pills navbar-brand">
+                        <li class="disabled"><a href="index.html">Home</a></li>
+                        <li class="dropdown">
+                            <a href="product.html">Product</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">***</a></li>
+                                <li><a href="#">***</a></li>
+                                <li><a href="#">***</a></li>
+                                <li><a href="#">***</a></li>
+                            </ul>
+                        </li>
+                        <!--
+                        
+                                                <li class="dropdown">
+                                                    <a class="dropdown-toggle" data-toggle="dropdown"  href="#">MOHEY<span class="caret"></span></a>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a href="#">COMPANY</a></li>
+                                                        <li><a href="#">STORE</a></li>
+                                                        <li><a href="#">GIFT CARD</a></li>
+                                                        <li class="divider"></li>
+                                                        <li><a href="#">Separated link</a></li>
+                        
+                                                        <li><a href="#">SQL</a></li>
+                                                        <li><a href="#">PHP</a></li>
+                                                        <li><a href="#">C#.Net</a></li>
+                                                    </ul>
+                                                </li>
+                        -->
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">STORE<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">GULSHAN-1</a></li>
+                                <li><a href="#">GULSHAN-2</a></li>
+                                <li><a href="#">DHANMONDI</a></li>
+                                <li><a href="#">UTTARA</a></li>
+                                <li><a href="#">BANANI</a></li>
+                                <li><a href="#">MALIBAG</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="aboutus.html">ABOUT US</a></li>
+                        <li style="padding: 250px">
+                        </li>
+                        <li>
+                            <input type="text" class="form-control" placeholder="Search" ng-model="code">
+                        </li>
+                        <li><button type="submit" class="btn btn-info">Submit</button></li>
+                    </ul>
+                </div>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-search"></span> Search</a></li>
+                    <li><a href="mycart.html"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-envelope"></span> Message</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-earphone"></span> +8801703777773</a></li>
+                    <li><a href="Sign Up.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="Login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-warning-sign"></span> Forgot Password?</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+
+
+    <div style="padding-top: 100px">
+
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+
+            <div style="background-color:rgb(204,204,204)" class="col-md-3">
+              
+                    <ul class="active"><h3><a href="index.html">Home</a></h3></ul>
+                    <ul><h3><a href="product.html">Product</a></h3></ul>
+                    <ul><h3><a href="aboutus.html">About Us</a></h3></ul>
+                    <ul><h3><a href="#">Store</a></h3></ul>
+           
+                <h3>Be a Proud Member</h3><h5>It's free and always will be.</h5>
+                <form>
+                    <table bgcolor="#FF66CC">
+                        <tr><td><input class="form-control" placeholder="Enter User Name" type="text"></td></tr>
+                        <tr><td><input class="form-control" placeholder="Enter Email Address" type="email"></td></tr>
+                        <tr><td><input class="form-control" placeholder="Enter Password" type="password"></td></tr>
+                        <tr><td><input class="form-control" placeholder="Retype Password"  type="password"></td></tr>
+                        <tr><td><input class="form-control" placeholder="Enter Mobile Number" type="text"></td></tr>
+                        <tr><td><input class="form-control" type="date"></td></tr>
+                        <td><h5><b>Gender :</b></h5>
+                            <b><input type="radio" name="g">Male
+                        <input type="radio" name="g">Female
+                            </b></td>
+                        <br/>
+                    </table>
+                    <p>By clicking Create Account, you agree to our <a href="#">Terms</a> and Conditions that you have read our <a href="#">Data Policy</a>, including our <a href="#">Cookie Use Policy</a>.</p>
+                    <input name="Submit" type="submit" class="btn btn-success" value="Submit" id="submit">
+                    <input name="reset" type="reset" class="btn btn-danger" value="Reset" id="reset">
+                    <input name="Forgot" type="submit" class="btn btn-warning" value="Forgot?" id="submit">
+                    <br/><br/>
+                    <p><a href="#">Create a Page</a> for a celebrity, band or business.</p>
+                </form>
+            </div>
+            
+            
+            
+            
+            <div class="content col-md-9">
+                <div>
+                    <h2>Product Details Display</h2>
+                </div>
+                <div class="alert alert-success alert-dismissable" ng-show="message">
+                    <a href="#" class="close" ng-click="messageClose()">&times;</a>
+                    <strong>Success!</strong> {{message}}
+                </div>
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Code</th>
+                            <th>Product_Name</th>
+                            <th>Product_Create_Date</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Picture</th>
+                            <th colspan="2">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="product in products|filter: pid">
+                            <td>{{$index + 1}}</td>
+                            <td>{{product.pid}}</td>
+                            <td>{{product.pname}}</td>
+                            <td>{{product.pcreateDate}}</td>
+                            <td>{{product.pprice}}</td>
+                            <td>{{product.pquantity}}</td>
+                            <td><img src="{{product.pimage}}" width="50px" height="50px"/></td>
+                            <td><button data-toggle="modal" data-target="#myModalEdit" type="button" class="btn btn-primary" ng-click="selectProduct(product)"><b>Update</b></button></td>
+                            <td><button data-toggle="modal" data-target="#myModalDelete" type="button" class="btn btn-danger" ng-click="selectProduct(product)"><b>Delete</b></button></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+
+
+                <!-- Save Modal -->
+                <div id="myModalSave" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Insert Product</h4>
+                            </div>
+                            <div class="modal-body">
+
+                                <form>
+                                    <div class="form-group">
+                                        <label for="pid">Product Code:</label>
+                                        <input ng-model="newProduct.pid" type="number" class="form-control" id="id">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pdate">Product Create_Date:</label>
+                                        <input ng-model="newProduct.pcreateDate" type="date" class="form-control" id="date">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pimage">Product Picture:</label>
+                                        <input ng-model="newProduct.pimage" type="text" class="form-control" id="image">
+                                    </div>
+                                        <div class="form-group">
+                                        <label for="pname">Product Name:</label>
+                                        <input ng-model="newProduct.pname" type="text" class="form-control" id="name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="price">Price:</label>
+                                        <input ng-model="newProduct.pprice" type="number" class="form-control" id="price">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="qty">Quantity: </label>
+                                        <input ng-model="newProduct.pquantity" type="number" class="form-control" id="qty">
+                                    </div>
+
+                                    <button ng-click="saveProduct()" data-dismiss="modal" type="submit" class="btn btn-success">Submit</button>
+                                </form>
+
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+                <!-- Edit Modal -->
+                <div id="myModalEdit" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Update Product</h4>
+                            </div>
+                            <div class="modal-body">
+
+                                <form>
+               <div class="form-group">
+                                        <label for="pid">Product Code:</label>
+                                        <input ng-model="clickedProduct.pid" type="number" class="form-control" id="id">
+                                    </div>
+                                                     <div class="form-group">
+                                        <label for="pname">Product Name:</label>
+                                        <input ng-model="clickedProduct.pname" type="text" class="form-control" id="name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="ppdate">Product Create_Date:</label>
+                                        <input ng-model="clickedProduct.pcreateDate" type="date" class="form-control" id="date">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pname">Product Picture:</label>
+                                        <input ng-model="clickedProduct.pimage" type="text" class="form-control" id="name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="price">Price:</label>
+                                        <input ng-model="clickedProduct.pprice" type="number" class="form-control" id="price">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pqty">Quantity: </label>
+                                        <input ng-model="clickedProduct.pquantity" type="number" class="form-control" id="qty">
+                                    </div>
+
+                                    <button ng-click="updateProduct()" data-dismiss="modal" type="submit" class="btn btn-success"><b>Submit</b></button>
+                                </form>
+
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+                <!-- Delete Modal -->
+                <div id="myModalDelete" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Delete Product</h4>
+                            </div>
+                            <div class="modal-body">
+
+                                You are now delete {{clickedProduct.pname}}
+
+                            </div>
+                            <div class="modal-footer">
+                                <button ng-click="deleteProduct()" type="button" class="btn btn-success" data-dismiss="modal">Ok</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div>
+                    <button data-toggle="modal" data-target="#myModalSave" type="button" class="btn btn-success"><b>Add New product</b></button>
+                </div>
+
+            </div>
+        </div>
+    </div> 
+
+</body>
+</html>
